@@ -1,0 +1,24 @@
+.banner_wrapper {
+  padding-top: 6.875rem;
+  z-index: 1;
+  background-image: url('../../assets/images/home-banner.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+
+.banner_wrapper .col-lg-7 {
+  vertical-align: middle;
+  align-self: center;
+}
+
+.banner_wrapper .banner-content h2::after {
+  content: '';
+  width: 60%;
+  height: 0.125rem;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  background: var(--bg-black);
+  overflow-x: hidden;
+}
