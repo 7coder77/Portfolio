@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 export class CommonServiceService {
   constructor(private http: HttpClient) {}
 
-  downloadFile(url: string): Observable<Blob> {
-    return this.http.get(url, { responseType: 'blob' });
+  downloadFile(url: string): Observable<ArrayBuffer> {
+    return this.http.get(url, { responseType: 'arraybuffer' });
+
   }
 }
