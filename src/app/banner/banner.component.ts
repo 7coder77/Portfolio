@@ -9,15 +9,17 @@ import { CommonServiceService } from '../common-service.service';
 export class BannerComponent implements OnInit {
 
   constructor(private commonService: CommonServiceService) {}
+  snackbar=false;
   // commonService:any;
 
   ngOnInit(): void {
   }
   download(){
     const filename = 'resume.pdf';
-
+    this.snackbar=true;
     this.commonService.downloadFile("https://fastapi-app-hf22.onrender.com/downloadfile/CV_latest.pdf").subscribe(
       (data: any) => {
+        this.snackbar=false;
         const blob = new Blob([new Uint8Array(data)], { type: 'application/pdf' });
         const link = document.createElement('a');
         link.href = window.URL.createObjectURL(blob);
