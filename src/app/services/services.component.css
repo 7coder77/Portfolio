@@ -1,0 +1,13 @@
+.services_wrapper .card {
+  background-color: var(--bg-light);
+  cursor: pointer;
+  -webkit-transition: all .4s ease 0s;
+  -moz-transition: all .4s ease 0s;
+  -o-transition: all .4s ease 0s;
+  transition: all .4s ease 0s;
+}
+
+.services_wrapper .card:hover {
+  box-shadow: 0 0.9375rem 1.875rem rgb(77 87 222 / 30%);
+  background: var(--bg-white);
+}
