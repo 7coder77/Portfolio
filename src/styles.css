@@ -94,7 +94,7 @@ body {
 
   /* custom css */
   section {
-      padding: 5rem 0;
+      padding-bottom: 5rem;
   }
 
   h1 {
@@ -159,7 +159,7 @@ a {
 }
 
 section {
-  padding: 5rem 0;
+  padding-bottom: 5rem;
 }
 
 
