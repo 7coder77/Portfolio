@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ServicesComponent } from './public/services/services.component';
 import { PortfolioComponent } from './public/portfolio/portfolio.component';
 import { RouterModule, Routes } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 const routes: Routes = [
   {
@@ -34,7 +36,9 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    BrowserAnimationsModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

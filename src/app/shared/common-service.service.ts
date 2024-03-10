@@ -15,4 +15,7 @@ export class CommonServiceService {
   getApi(url: string){
     return this.http.get(url);
   }
+  postApi(url:string,obj:object){
+    return this.http.post(url,obj);
+  }
 }
