@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonServiceService } from '../common-service.service';
+import { CommonServiceService } from '@app/shared/common-service.service';
 
 @Component({
   selector: 'app-banner',
@@ -13,6 +13,9 @@ export class BannerComponent implements OnInit {
   // commonService:any;
 
   ngOnInit(): void {
+    this.commonService.getApi('https://fastapi-app-hf22.onrender.com/').subscribe((data:any) => {
+      console.log(data);
+    });
   }
   download(){
     const filename = 'resume.pdf';

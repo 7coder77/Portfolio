@@ -12,4 +12,7 @@ export class CommonServiceService {
     return this.http.get(url, { responseType: 'arraybuffer' });
 
   }
+  getApi(url: string){
+    return this.http.get(url);
+  }
 }
