@@ -1,7 +1,7 @@
-<div (click)="goPublic()">go back</div>
+<div (click)="goPublic()">&lt;go back</div>
 <!-- login.component.html -->
 <div *ngIf="showLogin">
-  <h2>Login</h2>
+  <!-- <h2>Login</h2>
   <form [formGroup]="loginForm">
     <div>
       <mat-form-field appearance="fill">
@@ -25,6 +25,50 @@
       </mat-form-field>
     </div>
     <button mat-raised-button color="primary" type="button" (click)="onSubmit()" [disabled]="loginForm.invalid">Login</button>
-  </form>
+  </form> -->
+  <div class="loginbody">
+  <div class="container">
+    <div class="row px-3">
+      <div class="col-lg-10 col-xl-9 card flex-row mx-auto px-0">
+        <div class="img-left d-none d-md-flex"></div>
+
+        <div class="card-body">
+          <h4 class="title text-center mt-4">
+            Login into account
+          </h4>
+          <form class="form-box px-3" [formGroup]="loginForm">
+            <div class="form-input">
+              <span><i class="fa fa-envelope-o"></i></span>
+              <input type="text" formControlName="username" placeholder="Email Address" tabindex="10" required>
+            </div>
+            <div class="form-input">
+              <span><i class="fa fa-key"></i></span>
+              <input type="password" formControlName="password" name="" placeholder="Password" required>
+            </div>
+
+            <div class="mb-3">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="cb1" name="">
+                <label class="custom-control-label" for="cb1">Remember me</label>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <button type="button" (click)="onSubmit()" class="btn btn-block text-uppercase">
+                Login
+              </button>
+            </div>
+
+
+
+
+
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 <mat-progress-bar mode="indeterminate" *ngIf="!showLogin"></mat-progress-bar>
