@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
       this.commonService.postApi('https://fastapi-app-hf22.onrender.com/Auth_user',this.loginForm.value).subscribe((res)=>{
         console.log(res)
         this.authService.login(this.loginForm.value.email,this.loginForm.value.username)
-        this.router.navigate(['/admin/home']);
+        this.router.navigate(['/admin/post_login']);
       },
       (err)=>{
         this.showLogin=true;

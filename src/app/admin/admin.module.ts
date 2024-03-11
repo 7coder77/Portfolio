@@ -15,16 +15,23 @@ import { AuthGuard } from '@app/shared/guard/auth.guard';
 const route: Routes = [
   {
     path: '',
-    // component: AdminHomeComponent,
+    component: AdminHomeComponent,
     children: [
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
-      { path: 'home', component: AdminHomeComponent, canActivate: [AuthGuard] },
+      // { path: 'home', component: AdminHomeComponent, canActivate: [AuthGuard] },
+      { path: 'post_login',
+        loadChildren:()=>import('./post-login/post-login.module').then(m=>m.PostLoginModule),
+       canActivate: [AuthGuard] },
+
     ],
   },
 ];
 @NgModule({
-  declarations: [LoginComponent, AdminHomeComponent],
+  declarations: [
+    LoginComponent,
+    AdminHomeComponent
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(route),
@@ -37,4 +44,4 @@ const route: Routes = [
     MatIconModule,
   ],
 })
-export class AdminModule {}
+export class AdminModule { }
