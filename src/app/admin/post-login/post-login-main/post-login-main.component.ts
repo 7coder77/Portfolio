@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '@app/shared/auth.service';
 
 @Component({
   selector: 'app-post-login-main',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostLoginMainComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private auth:AuthService,
+    private router:Router
+  ) { }
 
   ngOnInit(): void {
+  }
+  logout(){
+    this.auth.logout();
+    this.router.navigate(['/admin']);
   }
 
 }

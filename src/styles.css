@@ -30,6 +30,7 @@
     /* Font Family */
     --primary-font: 'Rubik', sans-serif;
     --secondary-font: 'Roboto', sans-serif;
+    --admin-primary-color:#73c8f0;
 }
 
 body {
