@@ -4,6 +4,7 @@ import { PostLoginMainComponent } from './post-login-main/post-login-main.compon
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '@app/shared/guard/auth.guard';
 import { HomeComponent } from './home/home.component';
+import {MatBadgeModule} from '@angular/material/badge';
 
 const route: Routes = [
   {
@@ -23,6 +24,7 @@ const route: Routes = [
   ],
   imports: [
     CommonModule,
+    MatBadgeModule,
     RouterModule.forChild(route),
   ]
 })
