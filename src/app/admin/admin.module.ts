@@ -7,8 +7,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { AuthGuard } from '@app/shared/guard/auth.guard';
 
@@ -19,7 +19,7 @@ const route: Routes = [
     children: [
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
-      { path: 'home', component: AdminHomeComponent,canActivate: [AuthGuard] },
+      { path: 'home', component: AdminHomeComponent, canActivate: [AuthGuard] },
     ],
   },
 ];
@@ -34,7 +34,7 @@ const route: Routes = [
     ReactiveFormsModule,
     MatProgressBarModule,
     MatSnackBarModule,
-    MatIconModule
+    MatIconModule,
   ],
 })
 export class AdminModule {}

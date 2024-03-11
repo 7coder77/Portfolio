@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       this.commonService.postApi('https://fastapi-app-hf22.onrender.com/Auth_user',this.loginForm.value).subscribe((res)=>{
         console.log(res)
-        this.authService.login()
+        this.authService.login(this.loginForm.value.email,this.loginForm.value.username)
         this.router.navigate(['/admin/home']);
       },
       (err)=>{
