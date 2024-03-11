@@ -36,8 +36,8 @@ export class LoginComponent implements OnInit {
     this.hide = !this.hide;
   }
   onSubmit() {
-    this.showLogin=false;
     if (this.loginForm.valid) {
+      this.showLogin=false;
       this.commonService.postApi('https://fastapi-app-hf22.onrender.com/Auth_user',this.loginForm.value).subscribe((res)=>{
         console.log(res)
         this.authService.login(this.loginForm.value.email,this.loginForm.value.username)
@@ -47,6 +47,9 @@ export class LoginComponent implements OnInit {
         this.showLogin=true;
         this._snackBar.open("Wrong Username Or Password", 'close');
       })
+    }
+    else{
+      this._snackBar.open("Aare dada Username Password taak na!", 'close');
     }
   }
 
