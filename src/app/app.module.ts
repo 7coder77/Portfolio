@@ -12,6 +12,7 @@ import { PortfolioComponent } from './public/portfolio/portfolio.component';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { DynamicDataComponent } from './public/dynamic-data/dynamic-data.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,7 @@ const routes: Routes = [
     ServicesComponent,
     PortfolioComponent,
     BannerComponent,
+    DynamicDataComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let i of item">
+      <div class="col-lg-4 col-sm-6">
+        <div class="portfolio-img">
+          <img decoding="async" src="{{i.link}}" class="img-fluid w-60">
+          <div class="overlay"> <i class="fas fa-plus"></i></div>
+        </div>
+        <h5 class="mb-0 mt-4">{{i.title}}</h5>
+        <p>{{i.summary}}</p>
+      </div>
+  </ng-container>
+</div>
+</div>
