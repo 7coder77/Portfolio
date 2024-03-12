@@ -26,7 +26,7 @@ export class AddCompComponent implements OnInit {
   }
   onSubmit(){
     console.log(this.addData)
-    this.commonService.postApi('http://127.0.0.1:8000/components',this.addData.value).subscribe((res)=>{
+    this.commonService.postApi('https://fastapi-app-hf22.onrender.com/components',this.addData.value).subscribe((res)=>{
       this._snackBar.open("DATA added", 'close');
     },(err)=>{
       this._snackBar.open(err, 'close');

@@ -14,7 +14,7 @@ export class DynamicDataComponent implements OnInit {
 
   item:any=[];
   ngOnInit(): void {
-    this.comon.getApi('http://127.0.0.1:8000/GetAdminData').subscribe(
+    this.comon.getApi('https://fastapi-app-hf22.onrender.com/GetAdminData').subscribe(
       (res)=>{
         console.log(res);
         this.item=res;

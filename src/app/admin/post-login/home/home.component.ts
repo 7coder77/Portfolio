@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.displayedColumns = ['id', 'title', 'link','summary'];
     // this.dataSource = ELEMENT_DATA;
-    this.commonservice.getApi('http://127.0.0.1:8000/GetAdminData').subscribe((res)=>{
+    this.commonservice.getApi('https://fastapi-app-hf22.onrender.com/GetAdminData').subscribe((res)=>{
       this.dataSource=res;
     })
   }
