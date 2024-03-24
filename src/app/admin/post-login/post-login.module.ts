@@ -11,6 +11,8 @@ import {MatInputModule} from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatIconModule} from '@angular/material/icon';
 
 const route: Routes = [
   {
@@ -39,7 +41,9 @@ const route: Routes = [
     MatInputModule,
     MatButtonModule,
     MatSnackBarModule,
-    MatTableModule
+    MatTableModule,
+    MatCheckboxModule,
+    MatIconModule
   ]
 })
 export class PostLoginModule { }
