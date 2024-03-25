@@ -14,10 +14,13 @@
                   <a class="nav-link active" aria-current="page" href="/admin/post_login">Home</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="/admin/post_login/#not" matBadge="0" matBadgeColor="accent">Notification</a>
+                  <a class="nav-link" href="/admin/post_login/notification" [matBadge]="noti" matBadgeColor="accent">Notification</a>
               </li>
               <li class="nav-item">
                   <a class="nav-link" href="/admin/post_login/add">Add Component</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/admin/post_login/exp">Experience</a>
               </li>
               <li class="nav-item">
                   <a class="nav-link" (click)="logout()">Logout</a>

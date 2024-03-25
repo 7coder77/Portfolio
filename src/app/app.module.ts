@@ -13,6 +13,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { DynamicDataComponent } from './public/dynamic-data/dynamic-data.component';
+import { ContactComponent } from './public/contact/contact.component';
+import {MatInputModule} from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 const routes: Routes = [
   {
@@ -33,6 +37,7 @@ const routes: Routes = [
     PortfolioComponent,
     BannerComponent,
     DynamicDataComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +45,11 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

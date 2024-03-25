@@ -1,0 +1,47 @@
+<section id="contact" class="footer_wrapper mt-3 mt-md-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 newsletter text-center px-2">
+        <div>
+          <h3 class="text-white mb-3">Get updates from anywhere</h3>
+
+          <form class="row g-3 justify-content-center mt-3" [formGroup]="contact">
+            <div class="col-sm-6">
+              <input type="text" class="form-control mb-3" formControlName="name" placeholder="Name">
+            </div>
+            <div class="col-sm-6">
+              <input type="email" class="form-control mb-3" formControlName="email" placeholder="Email">
+            </div>
+            <div class="col-12">
+              <textarea class="form-control mb-3" rows="3" formControlName="msg" placeholder="Message"></textarea>
+            </div>
+            <div class="col-12">
+              <button type="submit" (click)="submit()" class="main-btn secondary-btn border-white mb-3">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-4">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-12 text-center">
+        <div class="footer-logo mb-3 mb-md-0">
+          <img decoding="async" src="../../../assets/images/logo.png">
+        </div>
+        <div class="my-4 social-icons">
+          <h5 class="mb-3">Follow Me</h5>
+          <ul class="list-unstyled d-flex justify-content-center align-items-center">
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-8 col-sm-12">
+        <p class="footer-text text-center my-2">This Project is made with <i class="far fa-heart"></i> by <a href="#">Aniruddha Joshi</a></p>
+      </div>
+    </div>
+  </div>
+</section>
