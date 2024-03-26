@@ -17,6 +17,7 @@ import { NotificationComponent } from './notification/notification.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ExperienceComponent } from './experience/experience.component';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatChipsModule} from '@angular/material/chips';
 
 const route: Routes = [
   {
@@ -53,7 +54,8 @@ const route: Routes = [
     MatCheckboxModule,
     MatIconModule,
     MatDialogModule,
-    MatStepperModule
+    MatStepperModule,
+    MatChipsModule
   ]
 })
 export class PostLoginModule { }
