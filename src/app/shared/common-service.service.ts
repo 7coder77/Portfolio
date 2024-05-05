@@ -18,4 +18,7 @@ export class CommonServiceService {
   postApi(url:string,obj:object){
     return this.http.post(url,obj);
   }
+  deleteApi(url:string){
+    return this.http.delete(url);
+  }
 }

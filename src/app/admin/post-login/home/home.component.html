@@ -1,2 +1,40 @@
-<p>home works!</p>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum similique, explicabo aliquam incidunt dicta rem ipsa eligendi, minima, architecto sequi cumque ab expedita? Omnis ratione totam nostrum quo quos maiores qui. Ipsum harum quaerat, ab omnis numquam, repellat distinctio minus provident aspernatur laboriosam sint corrupti earum ea! Quaerat corrupti distinctio beatae? Expedita voluptatem laudantium eligendi odio eos recusandae quia fuga ad perferendis, harum autem mollitia animi itaque aliquam quo. Dolorem qui odit at necessitatibus tempore consequatur ex! Nobis accusamus porro suscipit iure assumenda voluptatum? Ducimus minima beatae maiores voluptates, blanditiis, officia iure quod voluptate, dolore architecto reprehenderit quos facilis et voluptatibus! Illum explicabo hic quis amet, veritatis quisquam possimus tenetur accusamus cumque eos eius nihil eveniet. Tempore vitae expedita impedit mollitia ut iusto consectetur. Sapiente impedit est quas, assumenda illo magni deleniti cumque mollitia, qui saepe sint aliquid consequuntur iste aspernatur, corrupti molestiae laborum quis? Repudiandae praesentium ullam maxime, mollitia nesciunt aspernatur quo totam cupiditate nostrum est. Possimus, consequatur eveniet tempore harum cumque impedit quisquam, aut repellendus reiciendis placeat rerum nulla illum quae, totam mollitia consequuntur minima temporibus. Nihil iusto cum officia voluptates, ratione fugiat, delectus saepe sunt nam ad voluptatem fuga, accusantium fugit ipsa ullam? Aspernatur deleniti nulla aliquam nisi fuga quam in dolores sapiente? Perspiciatis, iusto maxime harum cum enim voluptatibus, sed id cumque eos distinctio architecto error? Rem quibusdam possimus sit odit impedit tempore expedita nihil ducimus, explicabo, quod, accusantium vero quo exercitationem! Saepe possimus voluptatum aspernatur labore officiis fuga pariatur distinctio nesciunt dolor ea provident aliquam obcaecati voluptatem eligendi, unde quos, quia dignissimos enim placeat nihil, sequi nam consequatur. Quis non fugit, distinctio maxime vitae nihil. Possimus corrupti dolorum eum nobis, incidunt fugit exercitationem ratione repudiandae minima, at voluptates praesentium nisi ad? Quas voluptatibus laborum similique. Sequi atque ut expedita recusandae accusantium! Ut quibusdam veniam ducimus?
+<div class="container">
+  <button mat-flat-button color="primary" [disabled]="!row">Edit</button>
+  <button mat-fab color="accent" (click)="deleteRow()" [disabled]="!row" aria-label="Example icon button with a delete icon">
+    <mat-icon>delete</mat-icon>
+  </button>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef> Title </th>
+      <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="summary">
+      <th mat-header-cell *matHeaderCellDef> Summary </th>
+      <td mat-cell *matCellDef="let element"> {{element.summary}} </td>
+    </ng-container>
+
+    <!-- Checkbox Column -->
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <mat-checkbox (change)="toggleSelection(element)"></mat-checkbox>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

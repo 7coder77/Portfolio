@@ -1,0 +1,42 @@
+.timeline-container {
+  position: relative;
+  padding-left: 40px;
+}
+
+.timeline-block {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--secondary-text);
+  z-index: 1;
+}
+
+.timeline-content {
+  margin-left: 30px;
+  padding: 10px;
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+.timeline-block::after {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 20px; /* Adjusted top margin */
+  bottom: 20px; /* Adjusted bottom margin */
+  height: calc(100% - 40px); /* Updated height calculation */
+  border-left: 2px dotted #bbbbc0;
+  z-index: 0;
+}
+
+.timeline-block:last-child::after {
+  content: none;
+}
