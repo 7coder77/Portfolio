@@ -1,18 +1,15 @@
 <!-- HTML for Vertical Stepper Timeline -->
 <div class="timeline-container">
-  <div class="timeline-block">
-    <div class="timeline-dot"></div>
-    <div class="timeline-content">
-      <h3>Step One Title</h3>
-      <p>Description for step one...</p>
+  <h3>My Experience:</h3>
+  <ng-container *ngFor="let d of data">
+    <div class="timeline-block">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>{{d?.name}}</h3>
+        <p>{{d?.desc}}<br>
+        working in organization since:{{d?.startDate}}</p>
+      </div>
     </div>
-  </div>
-  <div class="timeline-block">
-    <div class="timeline-dot"></div>
-    <div class="timeline-content">
-      <h3>Step Two Title</h3>
-      <p>Description for step two...</p>
-    </div>
-  </div>
+  </ng-container>
   <!-- Add more timeline blocks as needed -->
 </div>

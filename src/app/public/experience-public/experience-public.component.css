@@ -30,7 +30,7 @@
   content: '';
   position: absolute;
   left: 10px;
-  top: 20px; /* Adjusted top margin */
+  top: 35px; /* Adjusted top margin */
   bottom: 20px; /* Adjusted bottom margin */
   height: calc(100% - 40px); /* Updated height calculation */
   border-left: 2px dotted #bbbbc0;
