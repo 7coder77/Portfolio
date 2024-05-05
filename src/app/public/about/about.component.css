@@ -65,4 +65,7 @@
   text-transform: uppercase;
   margin-bottom: 0.3125rem;
 }
-
+.circle{
+  border-radius: 25%;
+  height:20%
+}
