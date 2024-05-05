@@ -9,9 +9,15 @@
           <input matInput formControlName="name" required>
         </mat-form-field>
         <mat-form-field class="col-md-3">
-          <mat-label>Skills</mat-label>
-          <input matInput formControlName="skills">
+          <mat-chip-list #chipList>
+            <mat-chip *ngFor="let skill of step.get('skills')?.value" [selectable]="true" [removable]="true" (removed)="removeSkill(skill, step)" class="bgcolor">
+              {{ skill }}
+              <mat-icon matChipRemove>cancel</mat-icon>
+            </mat-chip>
+            <input placeholder="New skill..." [matChipInputFor]="chipList" [matChipInputAddOnBlur]="true" (matChipInputTokenEnd)="addSkill($event, step)">
+          </mat-chip-list>
         </mat-form-field>
+
         <mat-form-field class="col-md-3">
           <mat-label>Start Date</mat-label>
           <input matInput type="date" formControlName="startDate">

@@ -17,6 +17,8 @@ import { ContactComponent } from './public/contact/contact.component';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ExperiencePublicComponent } from './public/experience-public/experience-public.component';
+import { MatIconModule } from '@angular/material/icon';
 
 const routes: Routes = [
   {
@@ -38,6 +40,7 @@ const routes: Routes = [
     BannerComponent,
     DynamicDataComponent,
     ContactComponent,
+    ExperiencePublicComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,8 @@ const routes: Routes = [
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

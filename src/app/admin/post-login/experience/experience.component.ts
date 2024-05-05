@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatChipInputEvent} from '@angular/material/chips';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import { MatStepper } from '@angular/material/stepper';
@@ -10,15 +10,16 @@ import { MatStepper } from '@angular/material/stepper';
   styleUrls: ['./experience.component.css']
 })
 export class ExperienceComponent implements OnInit {
-  form: FormGroup;
+  form: any;
 
   constructor(private fb: FormBuilder) {
-    this.form = this.fb.group({
-      items: this.fb.array([]) // Renamed 'steps' to 'items' to match the HTML
-    });
+
   }
 
   ngOnInit(): void {
+    this.form = this.fb.group({
+      items: this.fb.array([]) // Renamed 'steps' to 'items' to match the HTML
+    });
     // Initially, add one step
     this.addStep();
   }
@@ -48,4 +49,31 @@ export class ExperienceComponent implements OnInit {
   submit() {
     console.log(this.form.value);
   }
+  addSkill(event: MatChipInputEvent, stepControl: AbstractControl): void {
+    const input = event.input;
+    const value = event.value;
+
+    // Add our skill
+    if ((value || '').trim()) {
+      const skills = stepControl.get('skills')?.value || [];
+      skills.push(value.trim());
+      stepControl.get('skills')?.setValue(skills);
+    }
+
+    // Reset the input value
+    if (input) {
+      input.value = '';
+    }
+  }
+
+  removeSkill(skill: string, stepControl: AbstractControl): void {
+    const skills = stepControl.get('skills')?.value || [];
+    const index = skills.indexOf(skill);
+
+    if (index >= 0) {
+      skills.splice(index, 1);
+      stepControl.get('skills')?.setValue(skills);
+    }
+  }
+
 }
